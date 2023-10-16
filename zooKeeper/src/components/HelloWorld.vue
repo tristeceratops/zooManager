@@ -1,10 +1,12 @@
 <script setup>
+import {ref} from 'vue'
 defineProps({
   msg: {
     type: String,
     required: true
-  }
+  },
 })
+const count = ref(0)
 </script>
 
 <template>
@@ -15,6 +17,9 @@ defineProps({
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
     </h3>
+  </div>
+  <div>
+    <button @click="count++">Count is: {{ count }}</button>
   </div>
 </template>
 
@@ -28,6 +33,10 @@ h1 {
 
 h3 {
   font-size: 1.2rem;
+}
+
+button {
+  font-weight: bold;
 }
 
 .greetings h1,
